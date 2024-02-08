@@ -1,0 +1,2 @@
+Write first line with promise
+Append second line with promse
