@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./assets/styles/styles.css"> -->
+  <title>Add Comment</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type='number'],
+    input[type='text'],
+    textarea {
+      font-family: sans-serif;
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      /* width: 100%; */
+      min-width: 500px;
+    }
+
+    button {
+      color: white;
+      background-color: cornflowerblue;
+      padding: 12px 15px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Add a new comment</h1>
+    <form action="/comments" class="form" method="post">
+      <label for="id">Comment ID:</label>
+      <input type="number" name="id" id="id">
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author">
+
+      <label for="text">Text:</label>
+      <textarea name="text" id="text" cols="30" rows="10"></textarea>
+
+      <button type="submit">Submit Comment</button>
+    </form>
+  </div>
+</body>
+
+</html>
