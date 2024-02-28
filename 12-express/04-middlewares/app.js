@@ -5,6 +5,26 @@ const app = express();
 
 app.use(morgan('combined'));
 
-app.use((req, res) => res.send('This is Express server!'));
+// Express middleware function for request body JSON parsing
+app.use(express.json());
+
+// Myown middleware function for request body JSON parsing
+// app.use((req, res, next) => {
+//   let data = '';
+
+//   req.on('data', chunk => (data += chunk));
+//   req.on('end', () => {
+//     const parsedJSON = JSON.parse(data);
+//     req.body = parsedJSON;
+
+//     next();
+//   });
+// });
+
+app.use((req, res) => {
+  console.log(req.body);
+
+  return res.send('This is Express server!');
+});
 
 app.listen(5001, () => console.log('Server started on port 5001'));
