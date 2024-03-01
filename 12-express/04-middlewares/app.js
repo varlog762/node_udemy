@@ -11,8 +11,8 @@ app.use(morgan('combined'));
 app.use(express.json());
 
 /* Express middleware function for form data parsing
-express.urlencoded({ extended: true }) - uses 'qs' library for parsing form data, supports more features
-express.urlencoded({ extended: false }) - default behavior, uses buil-in module 'querystring'
+   express.urlencoded({ extended: true }) - uses 'qs' library for parsing form data, supports more features
+   express.urlencoded({ extended: false }) - default behavior, uses buil-in module 'querystring'
 */
 app.use(express.urlencoded({ extended: true }));
 
