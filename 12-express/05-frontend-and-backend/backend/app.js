@@ -1,11 +1,13 @@
 import express from 'express';
+
 import morgan from 'morgan';
+import cors from 'cors';
 // import qs from 'querystring';
 
 const app = express();
 
 // Use Morgan middleware to log incoming HTTP requests
-app.use(morgan('combined'));
+app.use(morgan('tiny'));
 
 // Express middleware function for request body JSON parsing
 app.use(express.json());
@@ -16,11 +18,18 @@ app.use(express.json());
 */
 app.use(express.urlencoded({ extended: true }));
 
+// Enable all cors requests
+app.use(cors());
+
 // Route handler to log and return the parsed request body
 app.use((req, res) => {
-  console.log(req.body);
+  const personData = {
+    name: 'Gregory',
+    isAdmin: true,
+  };
 
-  return res.send(req.body);
+  // Converts JS object to JSON & sends response containing object back to the client
+  return res.json(personData);
 });
 
 // Route handler to log and return the parsed request body
